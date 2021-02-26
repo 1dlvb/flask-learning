@@ -1,16 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
+menu = ["Download", "First app", "Contact us"]
 
 
 @app.route('/')
 def index():
-    return '<h1>Index</h1>'
+    return render_template("index.html", title='Home')
 
 
 @app.route('/about')
 def about():
-    return "<h1>About</h1>"
+    return render_template("about.html", title="About", menu=menu)
 
 
 if __name__ == "__main__":
