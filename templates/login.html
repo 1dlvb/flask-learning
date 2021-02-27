@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<form action="/login" method="post" class="center" >
+    <div class="form-group row form-vert  text-center" >
+        {% for cat, msg in get_flashed_messages(True) %}
+           <div class="alert {{cat}}">{{msg}}</div>
+        {% endfor %}
+        <input class="form-control mt-4" type="text" name="username" value="" placeholder="Username:" required>
+        <input class="form-control mt-4" type="email" name="email" value="" placeholder="Email:" required>
+        <input class="form-control mt-4" type="password" name="password" value="" placeholder="Password" required>
+
+        <button class="btn btn-success mt-4 justify-content-center" type="submit">Send</button>
+    </div>
+</form>
+
+{% endblock %}

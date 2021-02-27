@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<form action="/contact" method="post" class="center" >
+    <div class="form-group row form-vert  text-center" >
+        {% for cat, msg in get_flashed_messages(True) %}
+           <div class="alert {{cat}}">{{msg}}</div>
+        {% endfor %}
+        <input class="form-control mt-4" type="text" name="username" value="" placeholder="Name:" required>
+        <input class="form-control mt-4" type="email" name="email" value="" placeholder="Email:" required>
+        <textarea class="form-control mt-4" rows="4" name="message" placeholder="Your message: "></textarea>
+
+        <button class="btn btn-success mt-4 justify-content-center" type="submit">Send</button>
+    </div>
+</form>
+
+{% endblock %}

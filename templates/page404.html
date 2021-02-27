@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{super() }}
+<div class="er404">
+    <h1>Page not found.</h1>
+    <p>Page not found. Go to <a href="{{url_for('index')}}">home.</a></p>
+</div>
+{% endblock %}
