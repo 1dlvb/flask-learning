@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {{super()}}
+    {% for value in articles %}
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="alert alert-sky posts mt-4 ">
+                <div class="l-side">
+                    <h2 class="">{{value.title}}</h2>
+                    <p>{{value.intro}}</p>
+                    <p><b>Date: {{value.date}}</b></p>
+                    <a type="button" href="/posts/{{value.id}}" class="btn btn-warning mt-3 mb-2">Learn More</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+{% endblock %}

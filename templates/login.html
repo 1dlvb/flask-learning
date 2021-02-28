@@ -4,7 +4,7 @@
 {{ super() }}
 
 <form action="/login" method="post" class="center" >
-    <div class="form-group row form-vert  text-center" >
+    <div class="form-group row form-vert text-center" >
         {% for cat, msg in get_flashed_messages(True) %}
            <div class="alert {{cat}}">{{msg}}</div>
         {% endfor %}

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--  Bootstrap  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--  Font awesome  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--  css  -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
     <meta charset="UTF-8">
@@ -11,7 +16,7 @@
         {% if title %}
             <title>Flask - {{title}}</title>
         {% else %}
-            <title>About Flask</title>
+            <title>Flask</title>
         {% endif %}
     {% endblock %}
 </head>
@@ -35,11 +40,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact">Contact Us</a>
                         </li>
-                         <li class="nav-item">
+
+                        <li class="nav-item">
                             <a class="nav-link" href="login">Log In</a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="signup">Sign Up</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="create-article"><i class="fa fa-plus-square"></i></a>
                         </li>
                     </ul>
                 </div>
