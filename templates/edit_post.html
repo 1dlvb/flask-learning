@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{super()}}
+    <div class="container text-center mt-5">
+        <form method="POST" class="text-center mt-5 row form-vert-w">
+            <input type="text" name="title" class="form-control mt-3" value="{{article.title}}" placeholder="Title: ">
+            <textarea type="text" name="intro" class="form-control mt-3" placeholder="Intro: ">{{article.intro}}</textarea>
+            <textarea type="text" name="text" class="form-control mt-3" placeholder="Text: ">{{article.text}}</textarea>
+            <button type="success" class="btn btn-success mt-3">Edit</button>
+
+        </form>
+    </div>
+{% endblock %}

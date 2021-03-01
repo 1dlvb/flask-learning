@@ -108,9 +108,41 @@ def create_article():
             db.session.commit()
             return redirect('/posts')
         except:
-            return 'An error occurred while adding the article'
+            return '<p>An error occurred while adding the article.</p>'
     else:
         return render_template('create_article.html')
+
+
+# delete post
+@app.route('/post/<int:id>/delete')
+def delete_post(id):
+    article = Article.query.get_or_404(id)
+
+    try:
+        db.session.delete(article)
+        db.session.commit()
+        return redirect('/posts')
+    except:
+        return '<p>An error occurred while deleting the article.</p>'
+
+
+# edit post
+@app.route('/post/<int:id>/edit', methods=['POST', 'GET'])
+def edit_post(id):
+    article = Article.query.get(id)
+
+    if request.method == "POST":
+        article.title = request.form['title']
+        article.intro = request.form['intro']
+        article.text = request.form['text']
+
+        try:
+            db.session.commit()
+            return redirect('/posts')
+        except:
+            return '<p>An error occurred while editing the article.</p>'
+    else:
+        return render_template('edit_post.html', article=article)
 
 
 # page not found error

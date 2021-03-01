@@ -10,10 +10,14 @@
         <div class="row align-items-center">
             <div class="alert alert-sky posts mt-4 ">
                 <div class="center mb-5">
+
                     <h5>{{article.intro}}</h5>
                     <p>{{article.text}}</p>
 
                     <p><b>Date: {{article.date}}</b></p>
+                    <a href="/post/{{article.id}}/delete" type="button" class="btn btn-danger">Delete</a>
+                    <a href="/post/{{article.id}}/edit" type="button" class="btn btn-info">Edit</a>
+
                 </div>
 
             </div>
